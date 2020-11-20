@@ -148,7 +148,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service.xiaomi_kona
+    android.hardware.power-service.xiaomi_kona
 
 # PowerShare
 PRODUCT_PACKAGES += \
