@@ -192,6 +192,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lineage.trust@1.0-service
 
+# WiFi
+PRODUCT_PACKAGES += \
+    WifiResCommon
+
 # WiFi Display
 PRODUCT_PACKAGES += \
     libnl
