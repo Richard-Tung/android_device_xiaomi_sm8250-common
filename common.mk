@@ -96,11 +96,13 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # Fingerprint
+ifeq ($(TARGET_HAVE_FOD),true)
 PRODUCT_PACKAGES += \
     lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_kona
 
 PRODUCT_PACKAGES += \
     FODParts
+endif
 
 # Framework detect
 PRODUCT_PACKAGES += \
