@@ -99,6 +99,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_kona
 
+PRODUCT_PACKAGES += \
+    FODParts
+
 # Framework detect
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect \
