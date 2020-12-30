@@ -60,6 +60,11 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.btconfigstore@1.0 \
     vendor.qti.hardware.btconfigstore@2.0
 
+PRODUCT_PACKAGES += \
+    libbluetooth_qti \
+    libbtconfigstore \
+    bt_configstore.conf
+
 # Camera
 PRODUCT_PACKAGES += \
     Snap \

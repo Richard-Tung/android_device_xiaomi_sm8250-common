@@ -39,15 +39,8 @@ system_ext/lib64/vendor.qti.hardware.dsp@1.0.so
 system_ext/bin/bt_logger
 system_ext/etc/bluetooth/bt_profile.conf
 system_ext/etc/bluetooth/interop_database.conf
-system_ext/lib/libbluetooth_qti.so
 system_ext/lib/libbt-logClient.so
-system_ext/lib64/libbluetooth_qti.so
 system_ext/lib64/libbt-logClient.so
-
-# Bluetooth (Configstore)
-system_ext/etc/bluetooth/bt_configstore.conf
-system_ext/lib/libbtconfigstore.so
-system_ext/lib64/libbtconfigstore.so
 
 # Camera
 system_ext/etc/qvr/cfg/339/0/65536/mtp855.txt
