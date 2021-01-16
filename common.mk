@@ -161,10 +161,6 @@ endif
 PRODUCT_PACKAGES += \
     android.hardware.power-service.xiaomi_kona
 
-# PowerShare
-PRODUCT_PACKAGES += \
-    lineage.powershare@1.0-service.xiaomi_kona
-
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom

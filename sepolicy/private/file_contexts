@@ -11,7 +11,6 @@
 # HALs
 /(product|system/product)/vendor_overlay/[0-9]+/bin/hw/android\.hardware\.power-service    u:object_r:hal_power_default_exec:s0
 /system/bin/hw/lineage\.biometrics\.fingerprint\.inscreen@1.0-service\.xiaomi_kona    u:object_r:hal_fod_kona_exec:s0
-/system/bin/hw/lineage\.powershare@1\.0-service\.xiaomi_kona    u:object_r:hal_powershare_kona_exec:s0
 
 # Vendor overlay
 /(product|system/product)/vendor_overlay/[0-9]+/etc(/.*)?        u:object_r:vendor_configs_file:s0
