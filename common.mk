@@ -152,6 +152,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     XiaomiParts
 
+ifeq ($(TARGET_HAVE_FOD),true)
+PRODUCT_PRODUCT_PROPERTIES += \
+    doze.enable_fod_service=true
+endif
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.xiaomi_kona
