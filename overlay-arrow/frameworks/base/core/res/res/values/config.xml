@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2015-2016 The CyanogenMod Project
                    2017-2018 The LineageOS Project
+     Copyright (C) 2020 ArrowOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -88,4 +89,9 @@
           For example, a device with notification and battery lights that supports
           pulsating and RGB control would set this config to 75. -->
      <integer name="config_deviceLightCapabilities">232</integer>
+
+    <!-- Smart charging -->
+    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
+    <string name="config_SmartChargingSuspendValue" translatable="false">1</string>
+    <string name="config_SmartChargingResumeValue" translatable="false">0</string>
 </resources>
