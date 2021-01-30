@@ -1,3 +1,5 @@
+import /vendor/etc/init/hw/init.safailnet.rc
+
 on boot
     # Fingerprint
     chown system system /sys/devices/platform/soc/soc:goodix_fp/proximity_state
