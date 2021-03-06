@@ -434,5 +434,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
+# IFAA manager
+PRODUCT_PACKAGES += \
+	org.ifaa.android.manager
+
+PRODUCT_BOOT_JARS += \
+	org.ifaa.android.manager
+
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/sm8250-common/sm8250-common-vendor.mk)
