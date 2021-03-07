@@ -73,7 +73,8 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.recovery.qcom.rc \
     init.safailnet.rc \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    init.qcom.usb.sh
 
 # Configstore
 PRODUCT_PACKAGES += \
