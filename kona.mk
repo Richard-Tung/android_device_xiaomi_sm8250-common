@@ -350,6 +350,7 @@ PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     init.qcom.rc \
     init.recovery.qcom.rc \
+    init.qcom.power.rc \
     init.target.rc \
     fstab.qcom \
     ueventd.qcom.rc \
