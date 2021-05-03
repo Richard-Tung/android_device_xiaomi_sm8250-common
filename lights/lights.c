@@ -238,7 +238,8 @@ set_speaker_light_locked(struct light_device_t* dev,
     switch (state->flashMode) {
         case LIGHT_FLASH_HARDWARE:
             if (!!white)
-                rc = set_rgb_led_hw_blink(LED_WHITE, blink);
+		rc = set_rgb_led_brightness(LED_WHITE, white>0 ? 1 : 0);
+                rc |= set_rgb_led_hw_blink(LED_WHITE, blink);
             /* fallback to timed blinking if breath is not supported */
             if (rc == 0)
                 break;
@@ -250,7 +251,7 @@ set_speaker_light_locked(struct light_device_t* dev,
                 break;
         case LIGHT_FLASH_NONE:
         default:
-            rc = set_rgb_led_brightness(LED_WHITE, white);
+            rc = set_rgb_led_brightness(LED_WHITE, white>0 ? 2 : 0);
             break;
     }
 
