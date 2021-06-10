@@ -17,7 +17,6 @@ cc_library {
     name: "libdisppower-xiaomi_sm8250",
     proprietary: true,
     srcs: [
-        "disp-power/DisplayLowPower.cpp",
         "disp-power/InteractionHandler.cpp",
     ],
      shared_libs: [
