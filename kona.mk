@@ -221,6 +221,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
 
+# Input
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/sm8250-tavil-snd-card_Button_Jack.kl:system/usr/keylayout/sm8250-tavil-snd-card_Button_Jack.kl
+
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
