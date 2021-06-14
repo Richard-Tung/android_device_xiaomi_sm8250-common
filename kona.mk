@@ -234,8 +234,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.kona \
-    android.hardware.lights-service.qti
+    lights.kona
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
