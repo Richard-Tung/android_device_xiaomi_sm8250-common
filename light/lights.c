@@ -240,42 +240,44 @@ set_speaker_light_locked(struct light_device_t* dev,
 
     if (onMS != 0 && offMS != 0)
         blink = 1;
-
-    switch (state->flashMode) {
-        case LIGHT_FLASH_HARDWARE:
-            if (!!white)
-		rc = set_rgb_led_brightness(LED_WHITE, white>0 ? 1 : 0);
-                rc |= set_rgb_led_hw_blink(LED_WHITE, blink);
-            if (!!red)
-                rc |= set_rgb_led_hw_blink(LED_RED, blink);
-            if (!!green)
-                rc |= set_rgb_led_hw_blink(LED_GREEN, blink);
-            if (!!blue)
-                rc |= set_rgb_led_hw_blink(LED_BLUE, blink);
-            /* fallback to timed blinking if breath is not supported */
-            if (rc == 0)
-                break;
-        case LIGHT_FLASH_TIMED:
-            if (!!white)
-                rc = set_rgb_led_timer_trigger(LED_WHITE, onMS, offMS);
-            if (!!red)
-                rc |= set_rgb_led_timer_trigger(LED_RED, onMS, offMS);
-            if (!!green)
-                rc |= set_rgb_led_timer_trigger(LED_GREEN, onMS, offMS);
-            if (!!blue)
-                rc |= set_rgb_led_timer_trigger(LED_BLUE, onMS, offMS);
-            /* fallback to constant on if timed blinking is not supported */
-            if (rc == 0)
-                break;
-        case LIGHT_FLASH_NONE:
-        default:
-            rc = set_rgb_led_brightness(LED_WHITE, white>0 ? 2 : 0);
-            rc |= set_rgb_led_brightness(LED_RED, red);
-            rc |= set_rgb_led_brightness(LED_GREEN, green);
-            rc |= set_rgb_led_brightness(LED_BLUE, blue);
-            break;
-    }
-
+#ifdef WHITE_ONLY
+    if (blink != 0) {
+       rc = write_int("/sys/class/leds/white/breath", blink);
+       if (rc != 0)
+          rc = write_int("/sys/class/leds/white/delay_on", onMS);
+          rc |= write_int("/sys/class/leds/white/delay_off", offMS);
+	}
+    else
+#endif
+      switch (state->flashMode) {
+          case LIGHT_FLASH_HARDWARE:
+              if (!!red)
+                 rc = set_rgb_led_hw_blink(LED_RED, blink);
+              if (!!green)
+                 rc |= set_rgb_led_hw_blink(LED_GREEN, blink);
+              if (!!blue)
+                 rc |= set_rgb_led_hw_blink(LED_BLUE, blink);
+              /* fallback to timed blinking if breath is not supported */
+              if (rc == 0)
+                 break;
+          case LIGHT_FLASH_TIMED:
+              if (!!red)
+                 rc = set_rgb_led_timer_trigger(LED_RED, onMS, offMS);
+              if (!!green)
+                 rc |= set_rgb_led_timer_trigger(LED_GREEN, onMS, offMS);
+              if (!!blue)
+                 rc |= set_rgb_led_timer_trigger(LED_BLUE, onMS, offMS);
+              /* fallback to constant on if timed blinking is not supported */
+              if (rc == 0)
+                 break;
+          case LIGHT_FLASH_NONE:
+          default:
+              rc = set_rgb_led_brightness(LED_WHITE, white);
+              rc |= set_rgb_led_brightness(LED_RED, red);
+              rc |= set_rgb_led_brightness(LED_GREEN, green);
+              rc |= set_rgb_led_brightness(LED_BLUE, blue);
+              break;
+       }
     ALOGD("set_speaker_light_locked mode=%d, colorRGB=%08X, onMS=%d, offMS=%d, rc=%d\n",
             state->flashMode, colorRGB, onMS, offMS, rc);
 

@@ -25,6 +25,9 @@ LOCAL_CFLAGS := -DLOG_TAG=\"qdlights\"
 ifeq ($(LLVM_SA), true)
     LOCAL_CFLAGS += --compile-and-analyze --analyzer-perf --analyzer-Werror
 endif
+ifeq ($(TARGET_LED_WHITE_ONLY),true)
+    LOCAL_CFLAGS += -DWHITE_ONLY
+endif
 LOCAL_CLANG  := true
 LOCAL_MODULE := lights.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_TAGS := optional
