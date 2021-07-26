@@ -231,10 +231,6 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0.vendor \
     libhwbinder.vendor
 
-# HotwordEnrollement app permissions
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
-
 # IFAA manager
 PRODUCT_PACKAGES += \
     org.ifaa.android.manager
